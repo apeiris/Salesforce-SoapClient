@@ -28,16 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             btnGetAccessToken = new Button();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             btnCallSoap = new Button();
             tabControl1 = new TabControl();
             tbpScaffold = new TabPage();
+            label1 = new Label();
             tbpAccounts = new TabPage();
+            dataGridView1 = new DataGridView();
+            btnListAccounts = new Button();
+            tbpEDIPartner = new TabPage();
+            btnCreateEdiPartner = new Button();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            oneToolStripMenuItem = new ToolStripMenuItem();
+            twoToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1.SuspendLayout();
             tabControl1.SuspendLayout();
             tbpScaffold.SuspendLayout();
+            tbpAccounts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            tbpEDIPartner.SuspendLayout();
+            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // btnGetAccessToken
@@ -79,6 +92,7 @@
             // 
             tabControl1.Controls.Add(tbpScaffold);
             tabControl1.Controls.Add(tbpAccounts);
+            tabControl1.Controls.Add(tbpEDIPartner);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
@@ -88,6 +102,7 @@
             // 
             // tbpScaffold
             // 
+            tbpScaffold.Controls.Add(label1);
             tbpScaffold.Controls.Add(btnCallSoap);
             tbpScaffold.Controls.Add(btnGetAccessToken);
             tbpScaffold.Location = new Point(4, 24);
@@ -97,9 +112,21 @@
             tbpScaffold.TabIndex = 0;
             tbpScaffold.Text = "Scaffold";
             tbpScaffold.UseVisualStyleBackColor = true;
+            tbpScaffold.MouseClick += tbpScaffold_MouseClick;
+            // 
+            // label1
+            // 
+            label1.ContextMenuStrip = contextMenuStrip1;
+            label1.Location = new Point(110, 112);
+            label1.Name = "label1";
+            label1.Size = new Size(1028, 38);
+            label1.TabIndex = 3;
+            label1.Text = "label1";
             // 
             // tbpAccounts
             // 
+            tbpAccounts.Controls.Add(dataGridView1);
+            tbpAccounts.Controls.Add(btnListAccounts);
             tbpAccounts.Location = new Point(4, 24);
             tbpAccounts.Name = "tbpAccounts";
             tbpAccounts.Padding = new Padding(3);
@@ -107,6 +134,64 @@
             tbpAccounts.TabIndex = 1;
             tbpAccounts.Text = "Accounts";
             tbpAccounts.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(6, 6);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(1204, 379);
+            dataGridView1.TabIndex = 1;
+            // 
+            // btnListAccounts
+            // 
+            btnListAccounts.Location = new Point(6, 391);
+            btnListAccounts.Name = "btnListAccounts";
+            btnListAccounts.Size = new Size(147, 23);
+            btnListAccounts.TabIndex = 0;
+            btnListAccounts.Text = "List Accounts";
+            btnListAccounts.UseVisualStyleBackColor = true;
+            btnListAccounts.Click += btnListAccounts_Click;
+            // 
+            // tbpEDIPartner
+            // 
+            tbpEDIPartner.Controls.Add(btnCreateEdiPartner);
+            tbpEDIPartner.Location = new Point(4, 24);
+            tbpEDIPartner.Name = "tbpEDIPartner";
+            tbpEDIPartner.Padding = new Padding(3);
+            tbpEDIPartner.Size = new Size(1371, 435);
+            tbpEDIPartner.TabIndex = 2;
+            tbpEDIPartner.Text = "EDI Partner";
+            tbpEDIPartner.UseVisualStyleBackColor = true;
+            // 
+            // btnCreateEdiPartner
+            // 
+            btnCreateEdiPartner.Location = new Point(88, 372);
+            btnCreateEdiPartner.Name = "btnCreateEdiPartner";
+            btnCreateEdiPartner.Size = new Size(289, 23);
+            btnCreateEdiPartner.TabIndex = 0;
+            btnCreateEdiPartner.Text = "Create EDI Partner";
+            btnCreateEdiPartner.UseVisualStyleBackColor = true;
+            btnCreateEdiPartner.Click += btnCreateEdiPartner_Click;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { oneToolStripMenuItem, twoToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(95, 48);
+            // 
+            // oneToolStripMenuItem
+            // 
+            oneToolStripMenuItem.Name = "oneToolStripMenuItem";
+            oneToolStripMenuItem.Size = new Size(94, 22);
+            oneToolStripMenuItem.Text = "one";
+            // 
+            // twoToolStripMenuItem
+            // 
+            twoToolStripMenuItem.Name = "twoToolStripMenuItem";
+            twoToolStripMenuItem.Size = new Size(94, 22);
+            twoToolStripMenuItem.Text = "two";
             // 
             // Form1
             // 
@@ -122,6 +207,10 @@
             statusStrip1.PerformLayout();
             tabControl1.ResumeLayout(false);
             tbpScaffold.ResumeLayout(false);
+            tbpAccounts.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            tbpEDIPartner.ResumeLayout(false);
+            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -135,5 +224,13 @@
         private TabControl tabControl1;
         private TabPage tbpScaffold;
         private TabPage tbpAccounts;
+        private Button btnListAccounts;
+        private DataGridView dataGridView1;
+        private TabPage tbpEDIPartner;
+        private Button btnCreateEdiPartner;
+        private Label label1;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem oneToolStripMenuItem;
+        private ToolStripMenuItem twoToolStripMenuItem;
     }
 }
